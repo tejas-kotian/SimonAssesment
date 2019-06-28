@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import LogoComponent from "../assestdashboard/LogoComponent";
 
 const DashboardItem = ({ assestsEntered, handleSubmit, allocation }) => (
-
-
   <div className="small">
-    { allocation >0 &&
+   
+   
+    {allocation > 0 ?
       assestsEntered.map(assests => {
-        
         return (
           <div
             key={assests.id}
@@ -17,13 +17,17 @@ const DashboardItem = ({ assestsEntered, handleSubmit, allocation }) => (
             <span className="text-center">{assests.val}%</span>
           </div>
         );
-      })}
+      }) : <LogoComponent></LogoComponent>
+    }
     <>
       {allocation > 0 && (
         <button
           type="button"
           onClick={handleSubmit}
-          className={"btn btn-default h-10 w-75 pull-bottom " + (allocation===100?'':'disabled') }
+          className={
+            "btn btn-default h-10 w-75 pull-bottom " +
+            (allocation === 100 ? "" : "disabled")
+          }
         >
           SUBMIT
         </button>
@@ -35,7 +39,7 @@ const DashboardItem = ({ assestsEntered, handleSubmit, allocation }) => (
 DashboardItem.propTypes = {
   assestsEntered: PropTypes.array.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  allocation:PropTypes.number
+  allocation: PropTypes.number
 };
 
 export default DashboardItem;
