@@ -179,7 +179,7 @@ html, body {
       transform: rotate(180deg);
     }
   }
-  &.progress-90 .pie &.progress-91 .pie,&.progress-92 .pie,&.progress-93 .pie,
+  &.progress-90 .pie, &.progress-91 .pie,&.progress-92 .pie,&.progress-93 .pie,
   &.progress-94 .pie,&.progress-95 .pie,&.progress-96 .pie,&.progress-97 .pie,
   &.progress-98 .pie,&.progress-99 .pie  {
     clip: rect(auto, auto, auto, auto);
